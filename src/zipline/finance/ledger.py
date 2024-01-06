@@ -421,7 +421,7 @@ class Ledger:
 
     def end_of_session(self, session_ix):
         # save the daily returns time-series
-        self.daily_returns_series[session_ix] = self.todays_returns
+        self.daily_returns_series.iloc[session_ix] = self.todays_returns
 
     def sync_last_sale_prices(self, dt, data_portal, handle_non_market_minutes=False):
         self.position_tracker.sync_last_sale_prices(
